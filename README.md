@@ -59,13 +59,14 @@ graph TD
     IA -->|Action Simple| Simple[⚡ Fast Path<br/>Exécution Directe]
     IA -->|Action Complexe| Orch[🎯 Task Orchestrator]
     
-    Conv -->|RAG| Memory[📚 Memory Manager<br/>+ User Profile]
-    Memory -->|Contexte| LLM[🤖 LLM Local<br/>Ollama]
+    Conv -->|Contexte| LLM[🤖 LLM Local<br/>Ollama]
+    LLM -->|Réponse| UserOut1[👤 Réponse Utilisateur]
     
     Simple -->|Commandes| Tools[🛠️ System Tools]
     Tools --> AppLauncher[📱 AppLauncher]
     Tools --> GUIController[🎮 GUIController]
     Tools --> FileManager[📁 FileManager]
+    Tools -->|Résultat| UserOut2[👤 Réponse Utilisateur]
     
     Orch -->|Plan d'Action| Skills{🔀 Skill Router}
     
@@ -73,8 +74,13 @@ graph TD
     Skills -->|Vision Complex| CUA[👁️ CUA Agent<br/>Computer Use]
     Skills -->|Fichiers| FileManager
     
+    WebHelper -->|Résultat| Orch
+    FileManager -->|Résultat| Orch
+    
     CUA -->|1. Screenshot| Screen[📸 Capture Écran]
-    Screen -->|Image| Vision[🔍 Vision Pipeline]
+    Screen -->|Image| VLM1[🧠 VLM #1 Planificateur<br/>qwen2.5-vl<br/>Analyse + Suggestion]
+    
+    VLM1 -->|Suggestion| Vision[🔍 Vision Pipeline]
     
     Vision -->|2a. UI Detection| Omni[OmniParser<br/>YOLOv8 + Florence-2]
     Vision -->|2b. Text Detection| OCR[PaddleOCR]
@@ -84,13 +90,16 @@ graph TD
     
     Enricher -->|3. Annotation| Annotator[🎨 Visual Annotator<br/>Set-of-Mark]
     
-    Annotator -->|Image Annotée| VLM1[🧠 VLM #1<br/>Planification<br/>qwen2.5-vl]
-    Annotator -->|Image Annotée| VLM2[🎯 VLM #2<br/>Exécution<br/>qwen3-vl:4b]
+    Annotator -->|Image Annotée<br/>+ Suggestion VLM1| VLM2[🎯 VLM #2 Exécuteur<br/>qwen3-vl:4b<br/>Action Précise]
     
-    VLM1 -->|Décision| VLM2
     VLM2 -->|Actions| PyAuto[🖱️ PyAutoGUI<br/>Click/Type/Scroll]
     
     PyAuto -->|Feedback| CUA
+    CUA -->|Task Complete?| Decision{Tâche<br/>Terminée?}
+    Decision -->|Non| Screen
+    Decision -->|Oui| Orch
+    
+    Orch -->|Synthèse| UserOut3[👤 Réponse Utilisateur]
     
     style User fill:#e1f5ff
     style IA fill:#fff3cd
@@ -101,6 +110,9 @@ graph TD
     style Vision fill:#f5c6cb
     style VLM1 fill:#c3e6cb
     style VLM2 fill:#bee5eb
+    style UserOut1 fill:#e1f5ff
+    style UserOut2 fill:#e1f5ff
+    style UserOut3 fill:#e1f5ff
 ```
 
 ---
