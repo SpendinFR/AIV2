@@ -24,8 +24,8 @@ https://github.com/user-attachments/assets/3cbb0a25-2d0e-4800-bcd8-b2f0d3ce6b40
 *Exécution instantanée sans planification pour les tâches simples - ouverture d'applications, fichiers, contrôle système.*
 
 > **Exemple :** Ouvrir un fichier texte sur le bureau
-> 
-> [INSÉRER VIDÉO ICI]
+>
+https://github.com/user-attachments/assets/3015e56e-e181-4c65-86ff-fc4ccf8ed7ae
 
 ---
 
@@ -34,7 +34,7 @@ https://github.com/user-attachments/assets/3cbb0a25-2d0e-4800-bcd8-b2f0d3ce6b40
 
 > **Exemple :** Chercher la météo et créer un fichier texte avec les résultats sur le bureau
 > 
-> [INSÉRER VIDÉO ICI]
+https://github.com/user-attachments/assets/cf3debde-b943-4f05-ad5d-61e2fd17e1a6
 
 ---
 
@@ -43,7 +43,7 @@ https://github.com/user-attachments/assets/3cbb0a25-2d0e-4800-bcd8-b2f0d3ce6b40
 
 > **Exemple :** Ouvrir Spotify et naviguer dans les titres likés
 > 
-> [INSÉRER VIDÉO ICI]
+https://github.com/user-attachments/assets/379c81b7-7fae-44c0-9359-e9f149e7d24e
 
 ---
 
