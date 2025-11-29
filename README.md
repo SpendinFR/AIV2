@@ -16,7 +16,7 @@
 
 > **Exemple :** "Quelle est notre dernière interaction ?"
 > 
-(https://github.com/user-attachments/assets/3cbb0a25-2d0e-4800-bcd8-b2f0d3ce6b40)
+https://github.com/user-attachments/assets/3cbb0a25-2d0e-4800-bcd8-b2f0d3ce6b40
 
 ---
 
